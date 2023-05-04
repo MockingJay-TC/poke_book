@@ -16,4 +16,7 @@
   .search {
     @apply font-general mt-16 lg:mt-28 mb-4 flex pl-6 justify-between items-center border-4 lg:border-8 w-full lg:gap-4 lg:min-w-[550px] border-primary rounded-[60px] shadow-inner;
   }
+  .navSearch {
+    @apply font-general flex pl-4 justify-start items-center border-2 w-full border-g100 rounded-[60px] shadow-md;
+  }
 }
