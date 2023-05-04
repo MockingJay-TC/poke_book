@@ -1,6 +1,10 @@
 import SearchBar from "../component/SearchBar";
+import { useEffect } from "react";
 
 const Home = () => {
+  useEffect(() => {
+    console.log(import.meta.env.VITE_POKEAPI);
+  });
   return (
     <div className="w-screen h-screen flex justify-center items-center bg-blend-multiply px-8 py-8">
       <div className="flex flex-col items-center">
