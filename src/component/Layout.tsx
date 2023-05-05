@@ -4,7 +4,7 @@ const Layout = ({ childComp }: { childComp: JSX.Element }) => {
   return (
     <div>
       <Navbar />
-      <div className="bg-dark h-96">{childComp}</div>
+      <div className="bg-dark">{childComp}</div>
     </div>
   );
 };

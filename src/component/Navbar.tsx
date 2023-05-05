@@ -1,4 +1,5 @@
 import { MagnifyingGlassIcon } from "@heroicons/react/20/solid";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
@@ -10,9 +11,12 @@ const Navbar = () => {
           alt="Poke Cover"
           className="w-36 mt-8"
         />
-        <h1 className="text-2xl font-semibold font-clash cursor-pointer">
+        <Link
+          to="/"
+          className="text-2xl font-semibold font-clash cursor-pointer"
+        >
           Poke<span className="text-primary">book</span>
-        </h1>
+        </Link>
       </div>
       {/* search */}
       <div className="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]  flex items-center justify-center w-1/5 ">

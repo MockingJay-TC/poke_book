@@ -1,16 +1,15 @@
 import { useEffect } from "react";
 import SearchBar from "../component/SearchBar";
-import { useAppSelector, useAppDispatch } from "../store/hooks";
-import { fetchPokemons } from "../feature/pokemon/pokemonSlice";
+import { useAppDispatch, useAppSelector } from "../store/hooks";
+import { fetchAllPokemons } from "../feature/pokemon/pokemonSlice";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const dispatch = useAppDispatch();
   useEffect(() => {
-    dispatch(fetchPokemons());
+    dispatch(fetchAllPokemons());
   }, []);
 
-  const pokemons = useAppSelector((state) => state.pokemons.pokemons);
-  console.log(pokemons);
   return (
     <div className="w-screen h-screen flex justify-center items-center bg-blend-multiply px-8 py-8">
       <div className="flex flex-col items-center">
@@ -30,12 +29,12 @@ const Home = () => {
           think of.
         </h3>
         <SearchBar />
-        <a
-          href="/listview"
+        <Link
+          to="/listview"
           className="font-general lg:text-lg text-black font-medium underline"
         >
           View all
-        </a>
+        </Link>
       </div>
     </div>
   );
