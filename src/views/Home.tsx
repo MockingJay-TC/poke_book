@@ -1,10 +1,16 @@
-import SearchBar from "../component/SearchBar";
 import { useEffect } from "react";
+import SearchBar from "../component/SearchBar";
+import { useAppSelector, useAppDispatch } from "../store/hooks";
+import { fetchPokemons } from "../feature/pokemon/pokemonSlice";
 
 const Home = () => {
+  const dispatch = useAppDispatch();
   useEffect(() => {
-    console.log(import.meta.env.VITE_POKEAPI);
-  });
+    dispatch(fetchPokemons());
+  }, []);
+
+  const pokemons = useAppSelector((state) => state.pokemons.pokemons);
+  console.log(pokemons);
   return (
     <div className="w-screen h-screen flex justify-center items-center bg-blend-multiply px-8 py-8">
       <div className="flex flex-col items-center">
