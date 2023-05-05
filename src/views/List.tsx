@@ -11,13 +11,13 @@ const List = () => {
     dispatch(fetchPokemon(pokemons));
   }, []);
   return (
-    <div className="w-full h-full py-24 px-28">
+    <div className="w-full h-full py-32 px-52">
       {loading ? (
         <div>LOADING....</div>
       ) : (
-        <div className="grid grid-cols-4">
+        <div className="grid grid-cols-4 gap-x-8 gap-y-20">
           {pokemons.map((pokemon: PokeMonDetail) => {
-            return <PokeCard poke={pokemon} />;
+            return <PokeCard key={pokemon.name} poke={pokemon} />;
           })}
         </div>
       )}

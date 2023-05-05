@@ -16,7 +16,7 @@ export interface PokeMonDetail extends PokeMon {
   stats: [];
   types: [];
   past_types: [];
-  sprites: [];
+  sprites: PokemanSprites;
   species: [];
 }
 
@@ -24,5 +24,16 @@ export interface PokemonState {
   loading: boolean;
   pokemons: PokeMonDetail[];
   error: string | undefined;
-  pokemonUpdate: PokeMonDetail[];
+}
+
+interface PokemanSprites {
+  other: DreamWorld;
+}
+
+interface DreamWorld {
+  dream_world: FrontDefault;
+}
+
+interface FrontDefault {
+  front_default: string;
 }
