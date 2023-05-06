@@ -1,19 +1,27 @@
 import { MagnifyingGlassIcon } from "@heroicons/react/20/solid";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import ThemeModal from "./ThemeModal";
 
 const Navbar = () => {
+  const [open, setOpen] = useState(false);
+
+  const handleOpen = () => {
+    setOpen(true);
+  };
+
   return (
-    <div className="w-full h-20 flex items-center justify-between px-10 py-4 relative">
+    <div className="w-full bg-white h-20 flex items-center justify-between px-4 lg:px-10 py-4 relative bg-blend-multiply">
       {/* logo */}
       <div className="flex justify-center items-center gap-4">
         <img
           src="assets/images/pokeCover.svg"
           alt="Poke Cover"
-          className="w-36 mt-8"
+          className="w-36 mt-8 hidden lg:block"
         />
         <Link
           to="/"
-          className="text-2xl font-semibold font-clash cursor-pointer"
+          className="text-lg lg:text-2xl font-semibold font-clash cursor-pointer"
         >
           Poke<span className="text-primary">book</span>
         </Link>
@@ -31,8 +39,12 @@ const Navbar = () => {
       </div>
       {/* theme */}
       <div className="border-gray border rounded-full flex items-center justify-center cursor-pointer">
-        <div className="bg-primary w-8 h-8 m-1 rounded-full" />
+        <div
+          onClick={() => handleOpen()}
+          className="bg-primary w-8 h-8 m-1 rounded-full"
+        />
       </div>
+      <ThemeModal open={open} setOpen={setOpen} />
     </div>
   );
 };

@@ -5,11 +5,21 @@ export default {
     extend: {
       colors: {
         primary: "#E85382",
+        secondary: "#39BADF",
+        altenate: "#E1A725",
         dark: "#F1F1F1",
         gray: "#868686",
         g100: "#E1E1E1",
         g200: "#FCFCFC",
         g300: "#7B7B7B",
+        g400: "#EEEEEE",
+      },
+      screens: {
+        "3xl": "1920px",
+        "4xl": "2200px",
+      },
+      backgroundImage: {
+        noise: "url('assets/images/noise.svg')",
       },
     },
     fontFamily: {
@@ -17,5 +27,15 @@ export default {
       general: ["general"],
     },
   },
-  plugins: [],
+  plugins: [require("daisyui")],
+  daisyui: {
+    styled: true,
+    themes: false,
+    base: false,
+    utils: true,
+    logs: true,
+    rtl: false,
+    prefix: "",
+    darkTheme: "dark",
+  },
 };

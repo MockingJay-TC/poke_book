@@ -11,7 +11,8 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="w-screen h-screen flex justify-center items-center bg-blend-multiply px-8 py-8">
+    <div className="w-screen h-screen flex justify-center items-center relative px-8 py-8">
+      <div className="absolute w-screen h-screen inset-0 bg-noise opacity-5 -z-20" />
       <div className="flex flex-col items-center">
         {/* Poke Cover Image */}
         <div className="flex items-center justify-center">

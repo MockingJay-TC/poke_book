@@ -11,11 +11,13 @@ const List = () => {
     dispatch(fetchPokemon(pokemons));
   }, []);
   return (
-    <div className="w-full h-full py-32 px-52">
+    <div className="w-full h-full py-24 lg:py-32 px-12 lg:px-52 4xl:px-[30rem] ">
+      <div className="absolute w-full h-full inset-0 bg-noise opacity-5 -z-10" />
+
       {loading ? (
         <div>LOADING....</div>
       ) : (
-        <div className="grid grid-cols-4 gap-x-8 gap-y-20">
+        <div className="flex flex-col gap-y-16 md:grid lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 md:gap-x-8  2xl:gap-y-20">
           {pokemons.map((pokemon: PokeMonDetail) => {
             return <PokeCard key={pokemon.name} poke={pokemon} />;
           })}
