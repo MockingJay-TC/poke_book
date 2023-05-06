@@ -6,7 +6,6 @@ const initialState: PokemonState = {
   loading: false,
   pokemons: [],
   error: "",
-  pokemonUpdate: [],
 };
 
 export const fetchAllPokemons = createAsyncThunk(

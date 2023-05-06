@@ -3,8 +3,6 @@ import { useState } from "react";
 import { PokeMonDetail } from "../Interfaces/interfaces";
 import { ArrowLeftIcon } from "@heroicons/react/24/solid";
 import TypesCard from "./TypesCard";
-import GradLine from "./GradLine";
-import About from "./About";
 import Tabs from "./Tabs";
 import AboutTab from "./Tabs/AboutTab";
 import StatsTab from "./Tabs/StatsTab";
