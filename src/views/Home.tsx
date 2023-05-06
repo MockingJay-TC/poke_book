@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import SearchBar from "../component/SearchBar";
-import { useAppDispatch, useAppSelector } from "../store/hooks";
+import { useAppDispatch } from "../store/hooks";
 import { fetchAllPokemons } from "../feature/pokemon/pokemonSlice";
 import { Link } from "react-router-dom";
 
