@@ -13,6 +13,10 @@ export default {
         g200: "#FCFCFC",
         g300: "#7B7B7B",
         g400: "#EEEEEE",
+        gtop: "#7FCAD1",
+        gline: "#D9D9D9",
+        gdown: "#3DA0A9",
+        tab: "#E9E9E9",
       },
       screens: {
         "3xl": "1920px",
@@ -30,7 +34,15 @@ export default {
   plugins: [require("daisyui")],
   daisyui: {
     styled: true,
-    themes: false,
+    themes: [
+      {
+        mytheme: {
+          primary: "#E85382",
+          secondary: "#39BADF",
+          altenate: "#E1A725",
+        },
+      },
+    ],
     base: false,
     utils: true,
     logs: true,

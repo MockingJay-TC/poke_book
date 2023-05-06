@@ -1,7 +1,16 @@
 import { PokeMonDetail } from "../Interfaces/interfaces";
+import { useState } from "react";
 import { EyeIcon } from "@heroicons/react/24/solid";
 import { motion } from "framer-motion";
+import Details from "./Details";
+import TypesCard from "./TypesCard";
 const PokeCard = ({ poke }: { poke: PokeMonDetail }) => {
+  const [open, setOpen] = useState<boolean>(false);
+
+  const handleOpen = () => {
+    setOpen(true);
+  };
+
   const divMotion = {
     rest: {
       x: 0,
@@ -34,18 +43,11 @@ const PokeCard = ({ poke }: { poke: PokeMonDetail }) => {
         <h2 className="font-clash text-2xl font-medium my-4">{poke.name}</h2>
         <div className="my-8 flex justify-center items-center gap-8">
           {poke.types?.map((type: any) => {
-            return (
-              <div
-                key={type.slot}
-                className="font-general bg-g400 rounded-[40px] py-1.5 px-6 text-base"
-              >
-                {type.type.name}
-              </div>
-            );
+            return <TypesCard key={type.slot} type={type} />;
           })}
         </div>
         <motion.button
-          onClick={() => console.log("clicked", poke.name)}
+          onClick={() => handleOpen()}
           variants={divMotion}
           className="bg-primary w-full py-4 px-8 flex md:group-hover:flex justify-between items-center rounded-2xl md:hidden"
         >
@@ -53,6 +55,7 @@ const PokeCard = ({ poke }: { poke: PokeMonDetail }) => {
           <EyeIcon className="w-6 text-white" />
         </motion.button>
       </div>
+      <Details open={open} setOpen={setOpen} poke={poke} />
     </motion.div>
   );
 };

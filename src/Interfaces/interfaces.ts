@@ -18,6 +18,7 @@ export interface PokeMonDetail extends PokeMon {
   past_types: [];
   sprites: PokemanSprites;
   species: [];
+  weight: number;
 }
 
 export interface PokemonState {
