@@ -1,9 +1,11 @@
 import { MagnifyingGlassIcon } from "@heroicons/react/20/solid";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import ThemeModal from "./ThemeModal";
+import { PokeContext } from "../context/Context";
 
 const Navbar = () => {
+  const { setPokeSearch } = useContext(PokeContext);
   const [open, setOpen] = useState(false);
 
   const handleOpen = () => {
@@ -34,6 +36,7 @@ const Navbar = () => {
           <MagnifyingGlassIcon className="lg:w-5 w-3 text-g100 mr-4 cursor-pointer" />
           <input
             type="text"
+            onChange={(event) => setPokeSearch(event?.target.value)}
             placeholder="Enter pokeman name"
             className="lg:text-lg w-4/5 text-sm lg:w-3/4 py-2 focus:outline-none"
           />

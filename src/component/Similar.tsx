@@ -18,8 +18,8 @@ const Similar = ({ poke }: { poke: PokeMonDetail }) => {
         <div className="grid grid-cols-2 space-x-8 my-2">
           <h2>Abilities</h2>
           <div className="font-semibold flex items-start flex-col">
-            {poke.abilities.map((ability: any) => {
-              return <li>{ability.ability.name}</li>;
+            {poke.abilities.map((ability: any, index: number) => {
+              return <li key={index}>{ability.ability.name}</li>;
             })}
           </div>
         </div>
