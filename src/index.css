@@ -4,13 +4,13 @@
 
 @layer base {
   :root {
-    --primary: #e85382;
+    --primary: rgb(232, 83, 130);
   }
-  .theme-red {
-    --primary: #39badf;
+  .theme-blue {
+    --primary: rgb(57, 186, 223);
   }
   .theme-yellow {
-    --primary: #e1a725;
+    --primary: rgb(225, 167, 37);
   }
 }
 
@@ -31,8 +31,4 @@
   .navSearch {
     @apply font-general flex md:pl-4 pl-2  justify-start items-center border w-full border-g100 rounded-[60px] text-g300 md:shadow-md shadow-sm;
   }
-}
-
-[data-theme="mytheme"] {
-  --p: "var(--primary)";
 }

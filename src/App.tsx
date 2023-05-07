@@ -7,13 +7,15 @@ import { PokeContext, ThemeContext } from "./context/Context";
 const App = () => {
   const [pokeSearch, setPokeSearch] = useState<string>("");
   const [pokeTheme, setPokeTheme] = useState<string>("");
-  console.log(pokeTheme);
-  useEffect(() => {}, [pokeSearch, setPokeTheme]);
+  useEffect(() => {
+    setPokeTheme(pokeTheme);
+  }, [setPokeTheme]);
   return (
-    <div className={"theme-" + pokeTheme}>
+    <div className={pokeTheme ? "theme-" + pokeTheme : "theme"}>
+      {/* // <div className={`theme-${pokeTheme}`}> */}
       <Router>
-        <ThemeContext.Provider value={{ pokeTheme, setPokeTheme }}>
-          <PokeContext.Provider value={{ pokeSearch, setPokeSearch }}>
+        <PokeContext.Provider value={{ pokeSearch, setPokeSearch }}>
+          <ThemeContext.Provider value={{ pokeTheme, setPokeTheme }}>
             <Routes>
               <Route path="/" element={<Home />} />
               <Route
@@ -21,8 +23,8 @@ const App = () => {
                 element={<Layout childComp={<List />} />}
               />
             </Routes>
-          </PokeContext.Provider>
-        </ThemeContext.Provider>
+          </ThemeContext.Provider>
+        </PokeContext.Provider>
       </Router>
     </div>
   );

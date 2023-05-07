@@ -2,6 +2,5 @@ import { createContext } from "react";
 
 const defaultState: any = null;
 
-export const PokeContext = createContext(defaultState);
-
 export const ThemeContext = createContext(defaultState);
+export const PokeContext = createContext(defaultState);
