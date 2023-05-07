@@ -1,4 +1,9 @@
+import { useContext } from "react";
+import { ThemeContext } from "../context/Context";
+
 const ThemeModal = ({ open, setOpen }: { open: boolean; setOpen: any }) => {
+  const { setPokeTheme } = useContext(ThemeContext);
+
   return (
     <>
       {open && (
@@ -15,13 +20,22 @@ const ThemeModal = ({ open, setOpen }: { open: boolean; setOpen: any }) => {
                 Choose Theme
               </h3>
               <div className=" row-span-2 flex items-center justify-center gap-4 py-16 bg-black/20 ">
-                <div className="border-gray border rounded-full flex items-center justify-center cursor-pointer">
+                <div
+                  onClick={() => setPokeTheme("")}
+                  className="border-gray border rounded-full flex items-center justify-center cursor-pointer"
+                >
                   <div className="bg-primary w-16 h-16 m-1 rounded-full" />
                 </div>
-                <div className="border-gray hover:border rounded-full flex items-center justify-center cursor-pointer">
+                <div
+                  onClick={() => setPokeTheme("blue")}
+                  className="border-gray hover:border rounded-full flex items-center justify-center cursor-pointer"
+                >
                   <div className="bg-secondary w-16 h-16 m-1 rounded-full" />
                 </div>
-                <div className="border-gray hover:border rounded-full flex items-center justify-center cursor-pointer">
+                <div
+                  onClick={() => setPokeTheme("yellow")}
+                  className="border-gray hover:border rounded-full flex items-center justify-center cursor-pointer"
+                >
                   <div className="bg-altenate w-16 h-16 m-1 rounded-full" />
                 </div>
               </div>

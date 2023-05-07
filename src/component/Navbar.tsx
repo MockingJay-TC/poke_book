@@ -27,7 +27,7 @@ const Navbar = () => {
           to="/"
           className="text-lg lg:text-2xl font-semibold font-clash cursor-pointer hidden lg:block"
         >
-          Poke<span className="text-primary">book</span>
+          Poke<span className="text-skin-base">book</span>
         </Link>
       </div>
       {/* search */}
@@ -46,7 +46,7 @@ const Navbar = () => {
       <div className="border-gray border rounded-full flex items-center justify-center cursor-pointer">
         <div
           onClick={() => handleOpen()}
-          className="bg-primary w-8 h-8 m-1 rounded-full"
+          className="bg-skin-base w-8 h-8 m-1 rounded-full"
         />
       </div>
       <ThemeModal open={open} setOpen={setOpen} />

@@ -49,7 +49,7 @@ const PokeCard = ({ poke }: { poke: PokeMonDetail }) => {
         <motion.button
           onClick={() => handleOpen()}
           variants={divMotion}
-          className="bg-primary w-full py-4 px-8 flex md:group-hover:flex justify-between items-center rounded-2xl md:hidden"
+          className="bg-skin-base w-full py-4 px-8 flex md:group-hover:flex justify-between items-center rounded-2xl md:hidden"
         >
           <h2 className="font-general text-white text-base">View Pokemon</h2>
           <EyeIcon className="w-6 text-white" />

@@ -1,6 +1,10 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+    "'node_modules/preline/dist/*.js'",
+  ],
   theme: {
     extend: {
       colors: {
@@ -18,6 +22,21 @@ export default {
         gdown: "#3DA0A9",
         tab: "#E9E9E9",
       },
+      textColor: {
+        skin: {
+          base: "var(--primary)",
+        },
+      },
+      borderColor: {
+        skin: {
+          base: "var(--primary)",
+        },
+      },
+      backgroundColor: {
+        skin: {
+          base: "var(--primary)",
+        },
+      },
       screens: {
         "3xl": "1920px",
         "4xl": "2200px",
@@ -31,23 +50,5 @@ export default {
       general: ["general"],
     },
   },
-  plugins: [require("daisyui")],
-  daisyui: {
-    styled: true,
-    themes: [
-      {
-        mytheme: {
-          primary: "#E85382",
-          secondary: "#39BADF",
-          altenate: "#E1A725",
-        },
-      },
-    ],
-    base: false,
-    utils: true,
-    logs: true,
-    rtl: false,
-    prefix: "",
-    darkTheme: "dark",
-  },
+  plugins: [require("preline/plugin")],
 };

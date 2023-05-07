@@ -23,7 +23,7 @@ const Home = () => {
           />
         </div>
         <h1 className="font-clash font-semibold text-center mt-6 mb-2 text-3xl lg:text-5xl text-black">
-          Poké <span className="text-primary">book</span>
+          Poké <span className="text-skin-base">book</span>
         </h1>
         <h3 className="text-center font-general max-w-xs lg:max-w-sm text-sm lg:text-lg font-normal">
           Largest Pokémon index with information about every Pokemon you can

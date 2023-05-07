@@ -2,6 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  :root {
+    --primary: #e85382;
+  }
+  .theme-red {
+    --primary: #39badf;
+  }
+  .theme-yellow {
+    --primary: #e1a725;
+  }
+}
+
 @font-face {
   font-family: clash;
   src: url(/assets/fonts/ClashDisplay-Variable.ttf);
@@ -14,9 +26,13 @@
 
 @layer components {
   .search {
-    @apply font-general mt-16 lg:mt-28 mb-4 flex pl-6 justify-between items-center border-4 lg:border-8 w-full lg:gap-4 lg:min-w-[550px] border-primary rounded-[60px] shadow-inner;
+    @apply font-general mt-16 lg:mt-28 mb-4 flex pl-6 justify-between items-center border-4 lg:border-8 w-full lg:gap-4 lg:min-w-[550px] border-skin-base rounded-[60px] shadow-inner;
   }
   .navSearch {
     @apply font-general flex md:pl-4 pl-2  justify-start items-center border w-full border-g100 rounded-[60px] text-g300 md:shadow-md shadow-sm;
   }
+}
+
+[data-theme="mytheme"] {
+  --p: "var(--primary)";
 }
